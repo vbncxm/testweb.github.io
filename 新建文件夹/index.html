@@ -1,0 +1,565 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: ZhuJianwei
+ * @Date: 2021-06-22 09:14:06
+ * @LastEditors: ZhuJianwei
+ * @LastEditTime: 2021-06-23 17:49:18
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .box {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 怪异盒模型 */
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .box div {
+            position: absolute;
+        }
+        /* 头部 */
+        
+        .head {
+            width: 320px;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #223b41;
+            background: #09b8e3;
+            border-radius: 160px 160px 170px 170px;
+            position: relative;
+            z-index: 0;
+            box-shadow: -15px 30px 30px -30px #fff inset, 15px -30px 30px -30px #000 inset, -68px 40px 85px -60px #8b8b8b;
+        }
+        
+        .head p {
+            position: absolute;
+        }
+        
+        .face {
+            /* 大小 */
+            width: 270px;
+            height: 200px;
+            /* 位置 */
+            top: 90px;
+            left: 24px;
+            border-radius: 50%;
+            /* 圆边界 */
+            background: #fff;
+            /* 背景色 */
+            /* 边界 */
+            border: 2px solid #223b41;
+            z-index: 3;
+            position: relative;
+        }
+        
+        .face i {
+            position: absolute;
+        }
+        
+        .bread1 {
+            width: 60px;
+            height: 2px;
+            top: 94px;
+            left: 24px;
+            transform: rotate(-15deg);
+            background: #000;
+        }
+        
+        .bread2 {
+            width: 60px;
+            height: 2px;
+            top: 63px;
+            left: 24px;
+            transform: rotate(15deg);
+            background: #000;
+        }
+        
+        .bread3 {
+            width: 60px;
+            height: 2px;
+            top: 78px;
+            left: 24px;
+            background: #000;
+        }
+        
+        .bread4 {
+            width: 60px;
+            height: 2px;
+            top: 94px;
+            right: 24px;
+            transform: rotate(15deg);
+            background: #000;
+        }
+        
+        .bread5 {
+            width: 60px;
+            height: 2px;
+            top: 63px;
+            right: 24px;
+            transform: rotate(-15deg);
+            background: #000;
+        }
+        
+        .bread6 {
+            width: 60px;
+            height: 2px;
+            top: 78px;
+            right: 24px;
+            background: #000;
+        }
+        
+        .eye1 {
+            width: 75px;
+            height: 90px;
+            top: 50px;
+            left: 81px;
+            border-radius: 38px 38px;
+            background: #fff;
+            border: 2px solid #374346;
+            z-index: 4;
+            position: relative;
+        }
+        
+        .eye1 i {
+            position: absolute;
+        }
+        
+        .eyeball1 {
+            /* 大小 */
+            width: 15px;
+            height: 15px;
+            /* 定位 */
+            top: 60px;
+            right: 10px;
+            border-radius: 50%;
+            z-index: 5;
+            background: #000;
+        }
+        
+        .eye2 {
+            width: 75px;
+            height: 90px;
+            top: 50px;
+            right: 81px;
+            border-radius: 38px 38px;
+            background: #fff;
+            border: 2px solid #223b41;
+            z-index: 4;
+            position: relative;
+        }
+        
+        .eye2 i {
+            position: absolute;
+        }
+        
+        .eyeball2 {
+            width: 15px;
+            height: 15px;
+            /* 定位 */
+            top: 60px;
+            left: 10px;
+            border-radius: 50%;
+            z-index: 5;
+            background: #000;
+        }
+        
+        .nose {
+            /* 大小 */
+            width: 40px;
+            height: 40px;
+            /* 位置 */
+            top: 130px;
+            right: 138px;
+            background: #ca3f02;
+            border: 2px solid #223b41;
+            border-radius: 50%;
+            z-index: 4;
+            position: relative;
+        }
+        
+        .nose i {
+            position: absolute;
+        }
+        
+        .nose2 {
+            width: 5px;
+            height: 5px;
+            /* 位置 */
+            top: 10px;
+            right: 8px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0px 0px 3px 3px #fff;
+            z-index: 5;
+        }
+        
+        .mouth1 {
+            width: 110px;
+            height: 45px;
+            /* 位置 */
+            top: 209px;
+            right: 101px;
+            border: 3px solid black;
+            border-top: none;
+            border-radius: 0px 0px 100px 100px;
+            z-index: 4;
+        }
+        
+        .mouth2 {
+            width: 3px;
+            height: 85px;
+            background: #333333;
+            z-index: 4;
+            bottom: 43px;
+            right: 158px;
+        }
+        
+        .mouth3 {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            z-index: 4;
+            bottom: 72px;
+            right: 195px;
+            /* border: 2px solid #223b41; */
+        }
+        
+        .mouth4 {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            z-index: 4;
+            bottom: 72px;
+            left: 195px;
+            /* border: 2px solid #223b41; */
+        }
+        /* 身体 */
+        
+        .body {
+            width: 220px;
+            height: 160px;
+            justify-content: center;
+            bottom: 75px;
+            background: #09b8e3;
+            position: relative;
+            border: 2px solid #223b41;
+            /* border-radius: 6px 6px; */
+            z-index: 0;
+            box-shadow: -15px 30px 30px -30px #fff inset, 0px 0px 85px -60px #8b8b8b;
+        }
+        
+        .body p {
+            /* background: #09b8e3;  */
+            position: absolute;
+        }
+        
+        .body2 {
+            width: 220px;
+            height: 39px;
+            top: 12px;
+            left: -2px;
+            border-left: 2px solid #09b8e3;
+            border-right: 2px solid #09b8e3;
+            /* background: #fff;   */
+            z-index: 4;
+        }
+        
+        .body3 {
+            width: 220px;
+            height: 50px;
+            top: 20px;
+            left: -2px;
+            background: #09b8e3;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            z-index: 3;
+            box-shadow: 15px -8px 19px -20px #000 inset, 15px -8px 19px -20px #000;
+        }
+        
+        .necklace {
+            /* 大小 */
+            width: 230px;
+            height: 25px;
+            /* 定位 */
+            right: -6px;
+            bottom: 132px;
+            background: #b22d01;
+            border: 2px solid #223b41;
+            z-index: 5;
+            border-radius: 6px 6px;
+            position: relative;
+        }
+        
+        .necklace i {
+            position: absolute;
+        }
+        
+        .ring {
+            width: 40px;
+            height: 40px;
+            /* 定位 */
+            right: 95px;
+            top: 8px;
+            border: 2px solid #223b41;
+            background: #f4ec25;
+            border-radius: 50%;
+            z-index: 3;
+            position: relative;
+        }
+        
+        .ring span {
+            position: absolute;
+        }
+        
+        .brace1 {
+            width: 36px;
+            height: 5px;
+            border: 2px solid #223b41;
+            z-index: 4;
+            top: 10px;
+            right: 0px;
+        }
+        
+        .brace2 {
+            width: 10px;
+            height: 10px;
+            background: #223b41;
+            border-radius: 50%;
+            z-index: 4;
+            bottom: 10px;
+            right: 15px;
+        }
+        
+        .brace3 {
+            width: 2px;
+            height: 10px;
+            background: #223b41;
+            z-index: 4;
+            bottom: 0px;
+            right: 19px;
+        }
+        
+        .brace4 {
+            width: 5px;
+            height: 5px;
+            background: #fff;
+            box-shadow: 0px 0px 3px 3px #fff;
+            z-index: 5;
+            border-radius: 50%;
+            opacity: .8;
+            bottom: 28px;
+            right: 9px;
+        }
+        
+        .belly {
+            width: 180px;
+            height: 100px;
+            top: 30px;
+            left: 18px;
+            border-radius: 0px 0px 100px 100px;
+            background: #fff;
+            border: 2px solid #223b41;
+            border-top: none;
+            z-index: 3;
+            position: relative;
+        }
+        
+        .belly i {
+            position: absolute;
+        }
+        
+        .bag {
+            width: 130px;
+            height: 65px;
+            top: 25px;
+            left: 24px;
+            border-radius: 0px 0px 65px 65px;
+            background: #fff;
+            z-index: 2;
+            border: 2px solid #223b41;
+        }
+        
+        .hand1 {
+            width: 70px;
+            height: 50px;
+            left: 200px;
+            top: 20px;
+            background: #09b8e3;
+            border: 2px solid #223b41;
+            transform: rotate(30deg);
+            z-index: 0;
+            position: relative;
+        }
+        
+        .hand1 i {
+            position: absolute;
+        }
+        
+        .palm1 {
+            width: 60px;
+            height: 60px;
+            left: 50px;
+            top: -6px;
+            background: #fff;
+            border: 2px solid #223b41;
+            border-radius: 50%;
+            box-shadow: -9px 60px 90px -11px #000;
+        }
+        
+        .hand2 {
+            /* 大小 */
+            width: 70px;
+            height: 50px;
+            /* 定位 */
+            right: 200px;
+            top: 20px;
+            background: #09b8e3;
+            border: 2px solid #223b41;
+            transform: rotate(-30deg);
+            position: relative;
+            z-index: -1;
+        }
+        
+        .hand2 i {
+            position: absolute;
+        }
+        
+        .palm2 {
+            width: 60px;
+            height: 60px;
+            right: 50px;
+            top: -6px;
+            background: #fff;
+            border: 2px solid #223b41;
+            border-radius: 50%;
+            box-shadow: 12px -2px 19px -18px #000 inset, 20px 20px 40px -10px #000, -10px -1px 8px -10px #000 inset;
+        }
+        
+        .leg1 {
+            width: 130px;
+            height: 30px;
+            left: 111px;
+            bottom: -34px;
+            background: #fff;
+            border: 2px solid #223b41;
+            border-radius: 16px 16px 10px 16px;
+            box-shadow: -20px 0px 50px -12px #000;
+        }
+        
+        .hip {
+            width: 20px;
+            height: 15px;
+            left: 98px;
+            bottom: -2px;
+            background: #fff;
+            border-radius: 12px 12px 0px 0px;
+            border: 2px solid #223b41;
+            border-bottom: none;
+            box-shadow: -2px 3px 4px -2px #000 inset, -2px 6px 4px -3px #fff;
+        }
+        
+        .leg2 {
+            width: 130px;
+            height: 30px;
+            right: 111px;
+            bottom: -34px;
+            background: #fff;
+            border: 2px solid #223b41;
+            border-radius: 16px 16px 16px 10px;
+            box-shadow: 3px -21px 60px -8px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=box>
+
+        <div class=head>
+            <p class=eye1>
+                <i class=eyeball1></i>
+            </p>
+            <p class=eye2>
+                <i class=eyeball2></i>
+            </p>
+            <p class=nose>
+                <i class=nose2></i>
+            </p>
+            <p class=mouth1></p>
+            <p class=mouth2></p>
+            <p class=mouth3></p>
+            <p class=mouth4></p>
+            <p class=face>
+                <i class=bread1 bread></i>
+                <i class=bread2 bread></i>
+                <i class=bread3 bread></i>
+                <i class=bread4 bread></i>
+                <i class=bread5 bread></i>
+                <i class=bread6 bread></i>
+            </p>
+        </div>
+
+        <div class=body>
+            <p class=body2></p>
+            <p class=body3></p>
+            <p class=necklace>
+                <i class=ring>
+                    <span class=brace1></span>
+                    <span class=brace2></span>
+                    <span class=brace3></span>
+                    <span class=brace4></span>
+                </i>
+            </p>
+            <p class=hand1>
+                <i class=palm1></i>
+            </p>
+            <p class=hand2>
+                <i class=palm2></i>
+            </p>
+            <p class=belly>
+                <i class=bag></i>
+            </p>
+            <p class=leg1></p>
+            <p class=hip></p>
+            <p class=leg2></p>
+
+        </div>
+
+    </div>
+
+    <body>
+        <audio controls="controls">
+            <source src="./test.MP3" type="audio/mpeg">
+            <source src="./test.ogg" type="audio/ogg">
+            < autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+            src="test.MP3">
+
+        </audio>
+    </body>
+
+</html>
